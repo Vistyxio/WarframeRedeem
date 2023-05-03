@@ -10,6 +10,14 @@ PROMOCODES.txt是兑换码列表
 
 3.运行Warframe兑换.bat
 
+4.会打开5个填好兑换码的网页
+
+5.手动点击每个页面的SUBMIT CODE进行兑换
+
+6.回到Warframe兑换.bat程序按任意键再次打开5个网页
+
+7.重复直到全部兑换
+
 # 方法二
 
 1.下载生成js兑换码数组.bat和PROMOCODES.txt到同一文件夹
