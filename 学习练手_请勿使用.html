@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>WarframeRedeem</title>
+</head>
+<body>
+
+<p>1.点击“选择文件”选择兑换码列表<br>2.点击click to run运行</p>
+
+<h1 align="center" id="h1">PROMO CODE: </h1>
+
+<script type="text/javascript">
+
+
+function show() {
+	var reader = new FileReader();
+	var f = document.getElementById("filePicker").files[0];
+	reader.readAsText(f);
+	reader.onload = function() 
+	{
+		showPROMOCODES.value = this.result;
+	}
+}
+
+function run() {
+	
+	var showPROMOCODE = document.getElementById('h1');
+	
+	var PROMOCODES = document.getElementById("showPROMOCODES").value.split("\n");
+
+	if(PROMOCODES == false) { alert("请先选择文件"); return; }
+
+	//for(let i = 0; i < PROMOCODES.length; i++) {
+
+		showPROMOCODE.innerText = 'PROMO CODE: ' + PROMOCODES[0];
+		
+		var WFwindow = window.open('https://www.warframe.com/promocode?code=' + PROMOCODES[0], '', 'width=600, height=400');
+
+		//WFwindow.onload = function(){ WFwindow.document.getElementById("btnSubmit").click(); }
+		//WFwindow.addEventListener('load', function(){ WFwindow.document.getElementById("btnSubmit").click(); });
+		setTimeout("WFwindow.document.getElementById(\"btnSubmit\").click()", 5000);
+		//WFwindow.close();
+		
+		
+	//}
+}
+
+</script>
+
+<br>
+
+<div style="text-align: center"><input type="button" value="click to run" onclick="run()"/></div>
+
+<br>
+
+<input type="file" name="file" id="filePicker" onchange="show()"/>
+
+<br>
+
+<textarea id="showPROMOCODES" name="showPROMOCODES" rows="35" cols="40" readonly="readonly"></textarea>
+
+</body>
+</html>
